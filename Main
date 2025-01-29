@@ -1,0 +1,54 @@
+import java.awt.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            System.out.println("Hello world! " + args[0]);
+        } else {
+            System.out.println("Hello world!");
+        }
+
+        ArrayList<Object> aList = new ArrayList<>();
+        Collections.addAll(aList, args);
+        System.out.println(aList);
+
+        Collections.shuffle(aList, new Random());
+        System.out.println(aList);
+
+        if (args.length > 2) {
+            System.out.println(args[2]);
+        }
+
+        Set<String> hSet = new HashSet<>(Arrays.asList("OOP", "GG", "EZ", "F", "not", "drop", "GG"));
+        System.out.println(hSet);
+
+        SortedSet<String> sSet = new TreeSet<>(hSet);
+        System.out.println(sSet);
+
+        Stack<String> stacko = new Stack<>();
+        stacko.push("a");
+        stacko.push("b");
+        stacko.push("c");
+        System.out.println(stacko);
+        System.out.println(stacko.pop());
+        System.out.println(stacko);
+
+        Map<String, Color> favoriteColors = new HashMap<>();
+        favoriteColors.put("Juliet", Color.BLUE);
+        favoriteColors.put("Romeo", Color.GREEN);
+        favoriteColors.put("Adam", Color.RED);
+        favoriteColors.put("Eve", Color.BLUE);
+        favoriteColors.put("Robert", Color.BLACK);
+        favoriteColors.put("Mark", Color.WHITE);
+        favoriteColors.put("Pedro", Color.YELLOW);
+        favoriteColors.put("Cole", Color.BLUE);
+
+        for (Map.Entry<String, Color> entry : favoriteColors.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+        Map<String, Color> sortedFavoriteColors = new TreeMap<>(favoriteColors);
+        System.out.println("Sorted Favorite Colors: " + sortedFavoriteColors);
+    }
+}
